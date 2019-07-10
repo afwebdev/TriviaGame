@@ -1,0 +1,48 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 75%;
+  min-height: 30em;
+  height: 100%;
+  background-color: lightgreen;
+  margin: 0 auto;
+}
+
+#start {
+  width: 10em;
+  align-self: center;
+}
+
+.answer {
+  background-color: white;
+  padding: 1em;
+  border: 1px solid black;
+  width: 50%;
+  /* text-align: center; */
+}
+
+.answer:hover {
+  cursor: pointer;
+}
+
+.answerBox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.answerImage {
+  border-radius: 20px;
+  width: 20em;
+  height: 20em;
+}

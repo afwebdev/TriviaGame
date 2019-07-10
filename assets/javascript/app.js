@@ -91,20 +91,31 @@ $(document).ready(function () {
         }
     }
 
+    const winnerGIF = [
+        "./assets/images/SuccessMemes/greatSuccess.webp",
+        "./assets/images/SuccessMemes/kawhiChamp.gif",
+        "./assets/images/SuccessMemes/kipYes.webp",
+        "./assets/images/SuccessMemes/macCharlieDance.gif",
+        "./assets/images/SuccessMemes/skeletorWins.webp"
+    ];
 
 
 
     const answerScreen = function (answer) {
 
         const winnerScreen = function () {
+            let randWinIndex = Math.floor(Math.random() * ((questions.length - 1) - 2))
+            console.log(randWinIndex)
+
             if (questionIndex > questions.length) { console.log('END OF QUESTIONS') }
             return (`<div>
-                        <p>Thats the right answer!</p>
+                        <h2>Thats the right answer!</h2>
+                        <img class="answerImage" src="${winnerGIF[randWinIndex]}" />
                     </div>`)
         }
         const loserScreen = function () {
             return (`<div>
-                        <p>LOSER</p>
+                        <h2>Wrong..</h2>
                         <p>The answer was ${questions[questionIndex].answer}</p>
                         <img class="answerImage" src="${questions[questionIndex].answerImage}"/>
                     </div>`)
@@ -157,7 +168,6 @@ $(document).ready(function () {
 
 
 
-
     const initialGame = function () {
 
         //Build elements, inital array index 0
@@ -166,7 +176,6 @@ $(document).ready(function () {
         //Set an interval counting down from 30 - 0
         startInterval()
     }
-
 
 
     //CLICK HANDLERS

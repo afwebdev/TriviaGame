@@ -5,13 +5,13 @@ $(document).ready(function () {
             question: 'What must be manufactured by Victorinox or Wenger to be official?',
             answer: 'Swiss Army knives',
             answerBank: ['Patek', 'Swiss Army knives', 'Swavorski', 'Knox'],
-            answerImage: '/assets/images/SwissArmyKnife.jpg'
+            answerImage: './assets/images/SwissArmyKnife.jpg'
         },
         {
             question: 'What was the original brand of cereal whose mascot was Sunny?',
             answer: 'Kellogs Raisin Bran',
             answerBank: ['Sunny D', 'Captain Crunch', 'Chex', 'Kellogs Raisin Bran'],
-            answerImage: '/assets/images/raisinBran.jpg'
+            answerImage: './assets/images/raisinBran.jpg'
 
 
         },
@@ -19,14 +19,14 @@ $(document).ready(function () {
             question: 'What is Japanese sake made from?',
             answer: 'Rice',
             answerBank: ['Wheat', 'Sugar', 'Rice', 'Tofu'],
-            answerImage: '/assets/images/sake.jpg'
+            answerImage: './assets/images/sake.jpg'
 
         },
         {
             question: 'What flavor soda pop did Roy Allen and Frank Wright begin selling in 1919?',
             answer: 'Root Beer',
             answerBank: ['Coca Cola', 'C-Plus', 'Ginger Ale', 'Root Beer'],
-            answerImage: '/assets/images/rootBeer.jpeg'
+            answerImage: './assets/images/rootBeer.jpeg'
 
 
         },
@@ -34,7 +34,7 @@ $(document).ready(function () {
             question: 'When was the first Wal-Mart store opened?',
             answer: '1962',
             answerBank: ['1970', '1982', '1920', '1962'],
-            answerImage: '/assets/images/walmart.jpeg'
+            answerImage: './assets/images/walmart.jpeg'
 
 
         },
@@ -42,21 +42,21 @@ $(document).ready(function () {
             question: 'How many bits are there in a byte?',
             answer: '8',
             answerBank: ['100', '8', '16', '24'],
-            answerImage: '/assets/images/8bitDane.gif'
+            answerImage: './assets/images/8bitDane.gif'
 
         },
         {
             question: 'How long is a fortnight?',
             answer: 'Two Weeks',
             answerBank: ['One Week', 'A Month', 'Two Weeks', 'Three Weeks'],
-            answerImage: '/assets/images/fortnitelol.gif'
+            answerImage: './assets/images/fortnitelol.gif'
 
         },
         {
             question: 'What Kind of Animal is Chuck-E-Cheese?',
             answer: 'A Mouse',
             answerBank: ['A Cat', 'A Mouse', 'A Bird', 'A Dog'],
-            answerImage: '/assets/images/chuckcheese.jpeg'
+            answerImage: './assets/images/chuckcheese.jpeg'
 
         },
     ]
@@ -138,11 +138,7 @@ $(document).ready(function () {
                 }, 4000)
             }
         }
-
-
     }
-
-
 
     //Start an interval of 30seconds.
     const startInterval = function () {

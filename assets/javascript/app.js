@@ -100,7 +100,6 @@ $(document).ready(function () {
             if (questionIndex > questions.length) { console.log('END OF QUESTIONS') }
             return (`<div>
                         <p>Thats the right answer!</p>
-//                         <img class="answerImage" src="${a}" />
                     </div>`)
         }
         const loserScreen = function () {

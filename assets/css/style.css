@@ -4,9 +4,12 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+  background-image: url("../images/cubes.png");
+  background-color: #2d2d34;
 }
 
 .game-container {
+  color: #efefef;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,16 +17,18 @@ body {
   width: 75%;
   min-height: 30em;
   height: 100%;
-  background-color: lightgreen;
+  background-color: #19647e;
   margin: 0 auto;
 }
 
 #start {
+  height: 3em;
   width: 10em;
   align-self: center;
 }
 
 .answer {
+  color: #2d2d34;
   background-color: white;
   padding: 1em;
   border: 1px solid black;

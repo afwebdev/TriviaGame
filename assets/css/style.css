@@ -22,8 +22,9 @@ body {
 }
 
 #start {
+  margin-top: 2em;
   height: 3em;
-  width: 10em;
+  width: 15em;
   align-self: center;
 }
 

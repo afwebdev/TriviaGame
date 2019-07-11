@@ -83,7 +83,7 @@ $(document).ready(function () {
                         <p>Correct Answers: </p><span id="ansCorrect">${answerCorrect}</span>
                         <p>Incorrect Answers: </p><span id="ansIncorrect">${((questions.length) - answerCorrect)}</span>
                         <p>Unanswered Questions: </p><span id="ansUnanswered">${unansweredQuestion}</span>
-
+                        <div><button id="start">Play Again?</button></div>
                     </div>`
         } else {
             let question = questions[questionNum]
@@ -204,8 +204,13 @@ $(document).ready(function () {
 
 
     //The initial Start button on click.
-    $('#start').on('click', function () {
-        $('.game-container').html('')
+    $('.game-container').on('click', '#start', function () {
+
+        clearInterval(intervelID)
+        answerCorrect = 0;
+        answerWrong = 0;
+        unansweredQuestion = 0;
+        questionIndex = 0;
         initialGame();
     })
 

@@ -65,6 +65,9 @@ $(document).ready(function () {
     let intervelID;
     let questionIndex = 0;
     let chosenAnswer;
+    let answerCorrect = 0;
+    let answerWrong = 0;
+    let unansweredQuestion = 0;
 
     const resetGame = function () {
         questionIndex = 0;
@@ -74,7 +77,14 @@ $(document).ready(function () {
     const elementBuilder = function (questionNum) {
         // (questionNum >= questions.length) ? console.log('NO MORE QUESTIONS') : console.log('More questions coming')
         if (questionNum >= questions.length) {
-            return 'NO MORE QUESTIONS'
+            //Play again button, display of total of right/wrong answers, and unanswered
+            return `<div>
+                        <h1>Game Over..</h1>
+                        <p>Correct Answers: </p><span id="ansCorrect">${answerCorrect}</span>
+                        <p>Incorrect Answers: </p><span id="ansIncorrect">${((questions.length) - answerCorrect)}</span>
+                        <p>Unanswered Questions: </p><span id="ansUnanswered">${unansweredQuestion}</span>
+
+                    </div>`
         } else {
             let question = questions[questionNum]
             return (`
@@ -83,10 +93,10 @@ $(document).ready(function () {
                 <h2>${question.question}</h2>
             </div>
             <div class='answerBox'>
-                <p data-value="x" class="answer">${question.answerBank[0]}</p>
-                <p data-value="x" class="answer">${question.answerBank[1]}</p>
-                <p data-value="x" class="answer">${question.answerBank[2]}</p>
-                <p data-value="x" class="answer">${question.answerBank[3]}</p>
+                <p class="answer">${question.answerBank[0]}</p>
+                <p class="answer">${question.answerBank[1]}</p>
+                <p class="answer">${question.answerBank[2]}</p>
+                <p class="answer">${question.answerBank[3]}</p>
             </div>`)
         }
     }
@@ -104,6 +114,7 @@ $(document).ready(function () {
     const answerScreen = function (answer) {
 
         const winnerScreen = function () {
+            answerCorrect++;
             let randWinIndex = Math.floor(Math.random() * ((questions.length - 1) - 2))
             console.log(randWinIndex)
 
@@ -114,6 +125,7 @@ $(document).ready(function () {
                     </div>`)
         }
         const loserScreen = function () {
+            answerWrong++;
             return (`<div>
                         <h2>Wrong..</h2>
                         <p>The answer was ${questions[questionIndex].answer}</p>
@@ -161,6 +173,7 @@ $(document).ready(function () {
             if (counter === 0) {
                 //reset Counter
                 clearInterval(intervelID)
+                unansweredQuestion++;
                 answerScreen();
             }
         }, 1000)
@@ -176,6 +189,7 @@ $(document).ready(function () {
         //Set an interval counting down from 30 - 0
         startInterval()
     }
+
 
 
     //CLICK HANDLERS
@@ -194,13 +208,6 @@ $(document).ready(function () {
         $('.game-container').html('')
         initialGame();
     })
-
-
-
-
-
-
-
 
 
 })
